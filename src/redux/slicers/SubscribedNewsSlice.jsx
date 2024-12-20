@@ -59,8 +59,8 @@ export const createNews = createAsyncThunk(
         hasFile: !!newsData.file
       });
 
-      const response = await axios.post(
-        "http://localhost:5002/api/v1/content/news/create-news",
+      const response = await contentService.post(
+        "/api/v1/content/news/create-news",
         formData,
         {
           headers: {

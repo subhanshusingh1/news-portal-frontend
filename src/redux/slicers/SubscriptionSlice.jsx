@@ -42,8 +42,8 @@ export const fetchSubscribedRegions = createAsyncThunk(
   "subscription/fetchSubscribedRegions",
   async (userId) => {
     try {
-      const response = await axios.get(
-        `http://localhost:5001/api/v1/user/${userId}/subscriptions`
+      const response = await authService.get(
+        `/api/v1/user/${userId}/subscriptions`
       );
       return response.data; // Expecting an array of { regionId, regionType, subscribedAt }
     } catch (error) {
@@ -61,8 +61,8 @@ export const subscribeToRegion = createAsyncThunk(
       regionType.charAt(0).toUpperCase() + regionType.slice(1);
 
     try {
-      const response = await axios.post(
-        "http://localhost:5001/api/v1/users/subscribe",
+      const response = await authService.post(
+        "/api/v1/users/subscribe",
         {
           clerkUserId,
           regionId,
@@ -86,8 +86,8 @@ export const unsubscribeFromRegion = createAsyncThunk(
       regionType.charAt(0).toUpperCase() + regionType.slice(1);
 
     try {
-      const response = await axios.patch(
-        `http://localhost:5001/api/v1/users/${clerkUserId}/unsubscribe`,
+      const response = await authService.patch(
+        `/api/v1/users/${clerkUserId}/unsubscribe`,
         {
           regionId,
           regionType: formattedRegionType,
