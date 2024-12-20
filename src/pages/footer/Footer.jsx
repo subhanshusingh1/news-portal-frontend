@@ -18,7 +18,7 @@ const Footer = () => {
             <h3 className="text-xl font-medium text-gray-300 mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/home" className="hover:text-indigo-400">Home</a>
+                <a href="/" className="hover:text-indigo-400">Home</a>
               </li>
               <li>
                 <a href="/about" className="hover:text-indigo-400">About Us</a>
@@ -27,10 +27,10 @@ const Footer = () => {
                 <a href="/contact" className="hover:text-indigo-400">Contact</a>
               </li> */}
               <li>
-                <a href="/terms" className="hover:text-indigo-400">Terms & Conditions</a>
+                <a href="/" className="hover:text-indigo-400">Terms & Conditions</a>
               </li>
               <li>
-                <a href="/privacy" className="hover:text-indigo-400">Privacy Policy</a>
+                <a href="/" className="hover:text-indigo-400">Privacy Policy</a>
               </li>
             </ul>
           </div>

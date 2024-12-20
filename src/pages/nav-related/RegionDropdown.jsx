@@ -46,7 +46,7 @@ const RegionSelector = () => {
   useEffect(() => {
     const loadStates = async () => {
       try {
-        const stateData = await fetchData('http://localhost:5003/api/v1/region/state');
+        const stateData = await fetchData(`${import.meta.env.VITE_REGION_SERVICE_URL}/api/v1/region/state`);
         setStates(stateData);
         setError(null);
       } catch (error) {
@@ -82,7 +82,7 @@ const RegionSelector = () => {
     if (!stateId) return;
 
     try {
-      const districtData = await fetchData(`http://localhost:5003/api/v1/region/district/${stateId}`);
+      const districtData = await fetchData(`${import.meta.env.VITE_REGION_SERVICE_URL}/api/v1/region/district/${stateId}`);
       setDistricts(districtData);
       setCities([]);
       setLocalities([]);
@@ -102,7 +102,7 @@ const RegionSelector = () => {
     if (!districtId) return;
 
     try {
-      const cityData = await fetchData(`http://localhost:5003/api/v1/region/city/${districtId}`);
+      const cityData = await fetchData(`${import.meta.env.VITE_REGION_SERVICE_URL}/api/v1/region/city/${districtId}`);
       setCities(cityData);
       setLocalities([]);
       setSelectedCity('');
@@ -120,7 +120,7 @@ const RegionSelector = () => {
     if (!cityId) return;
 
     try {
-      const localityData = await fetchData(`http://localhost:5003/api/v1/region/locality/${cityId}`);
+      const localityData = await fetchData(`${import.meta.env.VITE_REGION_SERVICE_URL}/api/v1/region/locality/${cityId}`);
       setLocalities(localityData);
       setSelectedLocality('');
       setError(null);
