@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route,Navigate } from "react-router-dom";
 import Navbar from "./pages/Navbar";
-import HighLightedNews from "./pages/HighlightedNews.jsx";
+import HighlightedNews from "./pages/HighlightedNews.jsx";
 import EditorsPicks from "./pages/EditorsPicks";
 import Dashboard from "./pages/Dashboard.jsx";
 import { SignedIn } from "@clerk/clerk-react"; // Import SignedIn for protected route
@@ -24,7 +24,7 @@ function App() {
           path="/"
           element={
             <>
-              <HighLightedNews /> {/* Visible to everyone */}
+              <HighlightedNews /> {/* Visible to everyone */}
               <EditorsPicks /> {/* Visible to everyone */}
             </>
           }
